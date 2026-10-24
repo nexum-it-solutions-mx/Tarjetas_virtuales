@@ -1,33 +1,33 @@
-// ==================== 1. NAVEGACIÓN ENTRE SECCIONES DE LA DEMO ====================
-function showDemo(type, evt) {
+// ==================== 1. CAMBIO DE SECCIONES (TABS) ====================
+function showDemo(type, element) {
   // Ocultar todas las tarjetas demo
   const cards = document.querySelectorAll('.demo-card');
   cards.forEach(card => card.classList.remove('active'));
 
-  // Desactivar todos los botones del selector
+  // Desactivar todos los botones del menú superior
   const buttons = document.querySelectorAll('.tab-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
 
-  // Activar la demo seleccionada
+  // Activar la tarjeta seleccionada
   const targetCard = document.getElementById('demo-' + type);
   if (targetCard) {
     targetCard.classList.add('active');
   }
 
-  // Marcar botón activo
-  if (evt && evt.currentTarget) {
-    evt.currentTarget.classList.add('active');
+  // Activar el botón presionado
+  if (element) {
+    element.classList.add('active');
   }
 }
 
 // ==================== 2. ACCIÓN: ABRIR WHATSAPP ====================
 function abrirWhatsApp(telefono, mensaje) {
-  // Limpiar caracteres extra del número por seguridad
+  // Limpiar cualquier carácter no numérico excepto el símbolo +
   const numLimpio = telefono.replace(/[^0-9]/g, '');
   const mensajeEncoded = encodeURIComponent(mensaje);
   const url = `https://wa.me/${numLimpio}?text=${mensajeEncoded}`;
   
-  // Abrir en pestaña nueva o app de WhatsApp
+  // Abrir en nueva ventana/app
   window.open(url, '_blank');
 }
 
@@ -44,30 +44,22 @@ EMAIL:${email}
 NOTE:Contacto guardado desde Tarjeta Digital QR
 END:VCARD`;
 
-  // Detectar iOS / iPhone
-  const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-  if (isiOS) {
-    // En iPhone, Data URI fuerza la apertura directa de la app Contactos
-    const encodedVCARD = encodeURIComponent(vcardText);
-    window.location.href = "data:text/vcard;charset=utf-8," + encodedVCARD;
-  } else {
-    // En Android / Windows / Mac, creamos un archivo .vcf para descarga directa
-    const blob = new Blob([vcardText], { type: 'text/vcard;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = `${nombre.replace(/\s+/g, '_')}.vcf`;
-    
-    document.body.appendChild(a);
-    a.click();
-    
-    // Limpieza de memoria
-    setTimeout(() => {
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }, 100);
-  }
+  // Crear archivo Blob en memoria
+  const blob = new Blob([vcardText], { type: 'text/vcard;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  
+  // Elemento temporal de descarga
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', `${nombre.replace(/\s+/g, '_')}.vcf`);
+  document.body.appendChild(link);
+  
+  // Ejecutar clic
+  link.click();
+  
+  // Limpieza
+  setTimeout(() => {
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, 200);
 }
