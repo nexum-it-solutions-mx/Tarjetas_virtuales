@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Soluciones QR - Transforma tu Marca</title>
   
-  <!-- Google Fonts & FontAwesome Icons -->
+  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Hoja de Estilos Externa -->
+  <!-- Estilos Externos -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,17 +25,17 @@
       
       <!-- Selector de plantillas -->
       <div class="selector-container">
-        <button class="tab-btn active" onclick="showDemo('restaurante', event)">
+        <button class="tab-btn active" onclick="showDemo('restaurante', this)">
           <i class="fa-solid fa-utensils"></i> Restaurante / Comida
         </button>
-        <button class="tab-btn" onclick="showDemo('medico', event)">
+        <button class="tab-btn" onclick="showDemo('medico', this)">
           <i class="fa-solid fa-user-doctor"></i> Consultorio Médico
         </button>
-        <button class="tab-btn" onclick="showDemo('estetica', event)">
+        <button class="tab-btn" onclick="showDemo('estetica', this)">
           <i class="fa-solid fa-scissors"></i> Estética / Salón
         </button>
-        <button class="tab-btn" onclick="showDemo('tarjeta-vpro', event)">
-          <i class="fa-solid fa-id-card"></i> Tarjeta Virtual Pro (Abogado/Dentista)
+        <button class="tab-btn" onclick="showDemo('tarjeta-vpro', this)">
+          <i class="fa-solid fa-id-card"></i> Tarjeta Virtual Pro
         </button>
       </div>
     </div>
@@ -49,8 +49,6 @@
         <div class="profile-avatar"><i class="fa-solid fa-burger"></i></div>
         <h2>Sabor & Sazón Bistro</h2>
         <p class="subtitle">Cocina Urbana & Cortes Acompañados</p>
-        
-        <!-- Google Review -->
         <div class="google-review">
           <i class="fa-brands fa-google"></i>
           <span class="stars"><i class="fa-solid fa-star"></i> 4.9</span>
@@ -61,17 +59,15 @@
       <div class="card-body">
         <p class="bio-text">¡Bienvenido! Explora nuestro menú digital de hoy. Haz tu pedido directo a nuestra mesa o para llevar.</p>
 
-        <!-- Accesos rápidos -->
         <div class="actions-grid">
-          <a href="https://wa.me/5213300000000?text=Hola,%20quisiera%20reservar%20una%20mesa" class="btn-action whatsapp" target="_blank">
+          <button class="btn-action whatsapp" onclick="abrirWhatsApp('5213300000000', 'Hola, quisiera reservar una mesa')">
             <i class="fa-brands fa-whatsapp"></i> Reservar por WhatsApp
-          </a>
+          </button>
           <a href="https://maps.google.com" class="btn-action map" target="_blank">
             <i class="fa-solid fa-location-dot"></i> Cómo Llegar (Google Maps)
           </a>
         </div>
 
-        <!-- Menú de comida -->
         <div class="section-title"><i class="fa-solid fa-book-open"></i> Menú Destacado</div>
         <div class="menu-list">
           <div class="menu-item">
@@ -88,16 +84,8 @@
             </div>
             <div class="item-price">$140</div>
           </div>
-          <div class="menu-item">
-            <div class="item-info">
-              <h4>Limonada Mineral con Menta</h4>
-              <p>Refrescante bebida natural preparada al momento (500ml).</p>
-            </div>
-            <div class="item-price">$45</div>
-          </div>
         </div>
 
-        <!-- Redes Sociales -->
         <div class="social-links">
           <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
@@ -112,8 +100,6 @@
         <div class="profile-avatar"><i class="fa-solid fa-stethoscope"></i></div>
         <h2>Dr. Roberto Gómez C.</h2>
         <p class="subtitle">Especialista en Pediatría y Medicina General</p>
-        
-        <!-- Google Review -->
         <div class="google-review">
           <i class="fa-brands fa-google"></i>
           <span class="stars"><i class="fa-solid fa-star"></i> 5.0</span>
@@ -124,39 +110,24 @@
       <div class="card-body">
         <p class="bio-text">Atención médica profesional, cálida y oportuna para toda tu familia. Cédula Prof: 87654321.</p>
 
-        <!-- Accesos rápidos -->
         <div class="actions-grid">
-          <a href="https://wa.me/5213300000000?text=Hola,%20deseo%20agendar%20una%20consulta%20m%C3%A9dica" class="btn-action whatsapp" target="_blank">
+          <button class="btn-action whatsapp" onclick="abrirWhatsApp('5213300000000', 'Hola, deseo agendar una consulta médica')">
             <i class="fa-brands fa-whatsapp"></i> Agendar Cita WhatsApp
-          </a>
+          </button>
           <a href="tel:+523300000000" class="btn-action phone">
             <i class="fa-solid fa-phone"></i> Llamar al Consultorio
           </a>
         </div>
 
-        <!-- Servicios -->
         <div class="section-title"><i class="fa-solid fa-notes-medical"></i> Servicios & Consultas</div>
         <div class="services-list">
           <div class="service-tag"><i class="fa-solid fa-check"></i> Consulta General</div>
           <div class="service-tag"><i class="fa-solid fa-check"></i> Control Niño Sano</div>
-          <div class="service-tag"><i class="fa-solid fa-check"></i> Certificados Médicos</div>
-          <div class="service-tag"><i class="fa-solid fa-check"></i> Vacunación Esquema Completo</div>
         </div>
 
-        <!-- Horarios de Atención -->
-        <div class="info-box">
-          <i class="fa-regular fa-clock"></i>
-          <div>
-            <strong>Horario de Atención:</strong>
-            <p>Lun - Vie: 9:00 AM - 7:00 PM | Sáb: 9:00 AM - 2:00 PM</p>
-          </div>
-        </div>
-
-        <!-- Redes Sociales -->
         <div class="social-links">
           <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
     </section>
@@ -167,8 +138,6 @@
         <div class="profile-avatar"><i class="fa-solid fa-sparkles"></i></div>
         <h2>Glamour & Style Studio</h2>
         <p class="subtitle">Salón de Belleza y Cuidado Capilar</p>
-        
-        <!-- Google Review -->
         <div class="google-review">
           <i class="fa-brands fa-google"></i>
           <span class="stars"><i class="fa-solid fa-star"></i> 4.8</span>
@@ -177,141 +146,100 @@
       </div>
 
       <div class="card-body">
-        <p class="bio-text">Expertos en diseño de color, peinado y tratamientos capilares de alta gama. Haz lucir tu mejor versión.</p>
+        <p class="bio-text">Expertos en diseño de color, peinado y tratamientos capilares de alta gama.</p>
 
-        <!-- Accesos rápidos -->
         <div class="actions-grid">
-          <a href="https://wa.me/5213300000000?text=Hola,%20quiero%20agendar%20una%20cita%20de%20est%C3%A9tica" class="btn-action whatsapp" target="_blank">
+          <button class="btn-action whatsapp" onclick="abrirWhatsApp('5213300000000', 'Hola, quiero agendar una cita de estética')">
             <i class="fa-brands fa-whatsapp"></i> Agendar Cita
-          </a>
+          </button>
         </div>
 
-        <!-- Catálogo de productos -->
-        <div class="section-title"><i class="fa-solid fa-pump-soap"></i> Catálogo de Cuidado Capilar</div>
-        <div class="catalog-grid">
-          <div class="product-card">
-            <div class="product-icon"><i class="fa-solid fa-bottle-droplet"></i></div>
-            <div class="product-details">
-              <h4>Shampoo Reparación Pro</h4>
-              <p>Libre de sulfatos, enriquecido con argán para cabello procesado (250ml).</p>
-              <span class="price">$320 MXN</span>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-icon"><i class="fa-solid fa-pump-soap"></i></div>
-            <div class="product-details">
-              <h4>Acondicionador Sedoso</h4>
-              <p>Desenredo al instante y nutrición intensa con keratina (250ml).</p>
-              <span class="price">$290 MXN</span>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-icon"><i class="fa-solid fa-jar"></i></div>
-            <div class="product-details">
-              <h4>Crema Peinar Antifrizz</h4>
-              <p>Protector térmico y definidor de rizos u ondas sin peso (150ml).</p>
-              <span class="price">$250 MXN</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Redes Sociales -->
         <div class="social-links">
           <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
       </div>
     </section>
 
     <!-- ==================== DEMO 4: TARJETA VIRTUAL PRO ==================== -->
-<section id="demo-tarjeta-vpro" class="demo-card">
-  
-  <!-- Header con Foto de Portada -->
-  <div class="hero-vpro">
-    <div class="verified-badge">
-      <i class="fa-solid fa-shield-halved"></i> Perfil Verificado
-    </div>
-    <h2>Lic. Fernando Ramos</h2>
-    <p class="title">Especialista en Derecho Civil & Contratos</p>
-    <div class="cedulas-row">
-      <span><i class="fa-solid fa-id-card"></i> C.P. 12345678</span>
-      <span><i class="fa-solid fa-award"></i> C.E. 87654321</span>
-    </div>
-    <div class="contact-subrow">
-      <span><i class="fa-solid fa-phone"></i> (33) 3612 8490</span>
-      <span><i class="fa-regular fa-clock"></i> Lun-Vie 9am-6pm</span>
-    </div>
-  </div>
-
-  <div class="card-body">
-    
-    <!-- Redes sociales / Accesos Directos -->
-    <div class="quick-social-bar">
-      <a href="javascript:void(0)" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, vi su tarjeta digital y me interesa una consulta.')" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" title="Sitio Web"><i class="fa-solid fa-globe"></i></a>
-    </div>
-
-    <!-- Servicios / Especialidades -->
-    <div class="section-title"><i class="fa-solid fa-scale-balanced"></i> Especialidades Jurídicas</div>
-    
-    <a href="javascript:void(0)" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, solicito asesoría sobre un Contrato.')" class="specialty-card">
-      <div class="specialty-info">
-        <h4>Derecho de Contratos</h4>
-        <p>Redacción, revisión e interpretación legal de convenios.</p>
-      </div>
-      <i class="fa-solid fa-chevron-right specialty-icon"></i>
-    </a>
-
-    <a href="javascript:void(0)" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, solicito información sobre Juicios Intestamentarios.')" class="specialty-card">
-      <div class="specialty-info">
-        <h4>Juicios Intestamentarios</h4>
-        <p>Sucesiones, herencias y adjudicación de bienes.</p>
-      </div>
-      <i class="fa-solid fa-chevron-right specialty-icon"></i>
-    </a>
-
-    <a href="javascript:void(0)" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, busco asesoría en Derecho Inmobiliario.')" class="specialty-card">
-      <div class="specialty-info">
-        <h4>Derecho Inmobiliario</h4>
-        <p>Arrendamientos, compraventas y regulación de propiedades.</p>
-      </div>
-      <i class="fa-solid fa-chevron-right specialty-icon"></i>
-    </a>
-
-    <!-- Botones de Acción Principal: Ambas Formas -->
-    <div class="actions-grid" style="margin-top:20px;">
-      <!-- Opción 1: Iniciar WhatsApp -->
-      <button onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, he guardado su contacto desde su tarjeta QR.')" class="btn-action whatsapp">
-        <i class="fa-brands fa-whatsapp"></i> Mandar mensaje por WhatsApp
-      </button>
-
-      <!-- Opción 2: Guardar en la Agenda Teléfono / vCard -->
-      <button onclick="guardarEnAgenda('Lic. Fernando Ramos', '+523336128490', 'Abogado Especialista en Derecho Civil', 'contacto@ramosabogados.mx', 'Despacho Jurídico Ramos')" class="btn-action phone">
-        <i class="fa-solid fa-address-card"></i> Guardar en Agenda (Contacto)
-      </button>
+    <section id="demo-tarjeta-vpro" class="demo-card">
       
-      <a href="https://maps.google.com" class="btn-action map" target="_blank">
-        <i class="fa-solid fa-location-dot"></i> Ubicación del Despacho
-      </a>
-    </div>
+      <!-- Hero Header -->
+      <div class="hero-vpro">
+        <div class="verified-badge">
+          <i class="fa-solid fa-shield-halved"></i> Perfil Verificado
+        </div>
+        <h2>Lic. Fernando Ramos</h2>
+        <p class="title">Especialista en Derecho Civil & Contratos</p>
+        <div class="cedulas-row">
+          <span><i class="fa-solid fa-id-card"></i> C.P. 12345678</span>
+          <span><i class="fa-solid fa-award"></i> C.E. 87654321</span>
+        </div>
+        <div class="contact-subrow">
+          <span><i class="fa-solid fa-phone"></i> (33) 3612 8490</span>
+          <span><i class="fa-regular fa-clock"></i> Lun-Vie 9am-6pm</span>
+        </div>
+      </div>
 
-    <!-- Bloque QR Escaneable -->
-    <div class="vcard-qr-box">
-      <p style="margin:0; font-size:0.85rem; font-weight:600; color:#475569;">Escanea o comparte esta tarjeta</p>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nextagentia.app/tarjeta/dr-elias" alt="QR Demo">
-    </div>
+      <div class="card-body">
+        
+        <!-- Iconos sociales directos -->
+        <div class="quick-social-bar">
+          <button type="button" class="btn-icon" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, vi su tarjeta digital.')" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+          <button type="button" class="btn-icon" onclick="alert('Abriendo Instagram...')" title="Instagram"><i class="fa-brands fa-instagram"></i></button>
+          <button type="button" class="btn-icon" onclick="alert('Abriendo Facebook...')" title="Facebook"><i class="fa-brands fa-facebook-f"></i></button>
+          <button type="button" class="btn-icon" onclick="alert('Abriendo LinkedIn...')" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></button>
+          <button type="button" class="btn-icon" onclick="alert('Visitando Sitio Web...')" title="Sitio Web"><i class="fa-solid fa-globe"></i></button>
+        </div>
 
-  </div>
-</section>
+        <!-- Especialidades -->
+        <div class="section-title"><i class="fa-solid fa-scale-balanced"></i> Especialidades Jurídicas</div>
+        
+        <div class="specialty-card" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, solicito información sobre Derecho de Contratos.')">
+          <div class="specialty-info">
+            <h4>Derecho de Contratos</h4>
+            <p>Redacción, revisión e interpretación legal de convenios.</p>
+          </div>
+          <i class="fa-solid fa-chevron-right specialty-icon"></i>
+        </div>
+
+        <div class="specialty-card" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, solicito información sobre Juicios Intestamentarios.')">
+          <div class="specialty-info">
+            <h4>Juicios Intestamentarios</h4>
+            <p>Sucesiones, herencias y adjudicación de bienes.</p>
+          </div>
+          <i class="fa-solid fa-chevron-right specialty-icon"></i>
+        </div>
+
+        <!-- BOTONES PRINCIPALES QUE AHORA SÍ FUNCIONAN -->
+        <div class="actions-grid" style="margin-top:20px;">
+          
+          <!-- BOTÓN 1: WHATSAPP -->
+          <button type="button" class="btn-action whatsapp" onclick="abrirWhatsApp('523336128490', 'Hola Lic. Fernando, he guardado su contacto desde su tarjeta QR.')">
+            <i class="fa-brands fa-whatsapp"></i> Mandar mensaje por WhatsApp
+          </button>
+
+          <!-- BOTÓN 2: GUARDAR EN AGENDA (VCARD) -->
+          <button type="button" class="btn-action phone" onclick="guardarEnAgenda('Lic. Fernando Ramos', '+523336128490', 'Abogado Especialista en Derecho Civil', 'contacto@ramosabogados.mx', 'Despacho Jurídico Ramos')">
+            <i class="fa-solid fa-address-card"></i> Guardar en Agenda (Contacto)
+          </button>
+          
+          <a href="https://maps.google.com" class="btn-action map" target="_blank">
+            <i class="fa-solid fa-location-dot"></i> Ubicación del Despacho
+          </a>
+        </div>
+
+        <!-- Bloque QR Escaneable -->
+        <div class="vcard-qr-box">
+          <p style="margin:0; font-size:0.85rem; font-weight:600; color:#475569;">Escanea o comparte esta tarjeta</p>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nextagentia.app/tarjeta/dr-elias" alt="QR Demo">
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- Pie de página publicitario -->
   <footer class="sales-footer">
     <p>¿Quieres una solución personalizada como esta para tu negocio?</p>
     <a href="https://wa.me/5213300000000?text=Hola,%20me%20interesa%20adquirir%20mi%20tarjeta%20digital%20o%20men%C3%BA%20QR" class="cta-btn" target="_blank">
@@ -319,22 +247,7 @@
     </a>
   </footer>
 
-  <!-- Script para la navegación interactiva -->
-  <script>
-    function showDemo(type, evt) {
-      const cards = document.querySelectorAll('.demo-card');
-      cards.forEach(card => card.classList.remove('active'));
-
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById('demo-' + type).classList.add('active');
-      
-      if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active');
-      }
-    }
-  </script>
-
+  <!-- VINCULACIÓN DEL SCRIPT AL FINAL DE BODY -->
+  <script src="script.js"></script>
 </body>
 </html>
