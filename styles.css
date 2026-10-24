@@ -202,12 +202,13 @@ body {
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.1s;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
-.btn-action:hover { opacity: 0.9; }
+.btn-action:hover { opacity: 0.9; transform: translateY(-1px); }
 .btn-action.whatsapp { background-color: #25d366; color: #ffffff; }
 .btn-action.map { background-color: #3b82f6; color: #ffffff; }
 .btn-action.phone { background-color: #0284c7; color: #ffffff; }
@@ -222,139 +223,19 @@ body {
   gap: 8px;
 }
 
-/* Lista de Menú */
-.menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+/* Menu & Servicios */
+.menu-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.menu-item { display: flex; justify-content: space-between; padding: 10px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+.item-info h4 { font-size: 0.85rem; color: #1e293b; }
+.item-info p { font-size: 0.75rem; color: #64748b; }
+.item-price { font-weight: 700; color: #059669; font-size: 0.9rem; }
 
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px;
-  background-color: #f8fafc;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
+.services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+.service-tag { background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; padding: 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
 
-.item-info h4 {
-  font-size: 0.85rem;
-  color: #1e293b;
-  margin-bottom: 2px;
-}
-
-.item-info p {
-  font-size: 0.75rem;
-  color: #64748b;
-}
-
-.item-price {
-  font-weight: 700;
-  color: #059669;
-  font-size: 0.9rem;
-}
-
-/* Servicios Medicos */
-.services-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.service-tag {
-  background-color: #f0f9ff;
-  border: 1px solid #bae6fd;
-  color: #0369a1;
-  padding: 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.info-box {
-  background-color: #f8fafc;
-  border: 1px dashed #cbd5e1;
-  padding: 12px;
-  border-radius: 8px;
-  display: flex;
-  gap: 10px;
-  font-size: 0.75rem;
-  color: #475569;
-  margin-bottom: 20px;
-}
-
-/* Catálogo de Estética */
-.catalog-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.product-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px;
-  background-color: #fdf2f8;
-  border: 1px solid #fbcfe8;
-  border-radius: 8px;
-}
-
-.product-icon {
-  font-size: 1.2rem;
-  color: #db2777;
-}
-
-.product-details h4 {
-  font-size: 0.82rem;
-  color: #831843;
-}
-
-.product-details p {
-  font-size: 0.72rem;
-  color: #9d174d;
-}
-
-.product-details .price {
-  font-weight: 700;
-  font-size: 0.78rem;
-  color: #be185d;
-}
-
-/* Iconos Sociales */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  padding-top: 10px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.social-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #f1f5f9;
-  color: #475569;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.social-icon:hover {
-  background-color: #2563eb;
-  color: #ffffff;
-}
+.social-links { display: flex; justify-content: center; gap: 12px; padding-top: 10px; border-top: 1px solid #e2e8f0; }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; background: #f1f5f9; color: #475569; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.social-icon:hover { background: #2563eb; color: #fff; }
 
 /* ==================== DEMO 4: TARJETA VIRTUAL PRO ==================== */
 .hero-vpro {
@@ -368,7 +249,6 @@ body {
   justify-content: flex-end;
   padding: 20px;
   color: #ffffff;
-  text-align: left;
 }
 
 .hero-vpro .verified-badge {
@@ -386,36 +266,12 @@ body {
   gap: 5px;
 }
 
-.hero-vpro h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-}
+.hero-vpro h2 { font-size: 1.5rem; font-weight: 700; margin: 0; color: #fff; }
+.hero-vpro p.title { font-size: 0.85rem; color: #cbd5e1; margin: 4px 0 10px; }
+.cedulas-row { display: flex; gap: 10px; font-size: 0.75rem; color: #38bdf8; margin-bottom: 8px; }
+.contact-subrow { display: flex; align-items: center; gap: 15px; font-size: 0.8rem; color: #e2e8f0; }
 
-.hero-vpro p.title {
-  font-size: 0.85rem;
-  color: #cbd5e1;
-  margin: 4px 0 10px;
-}
-
-.cedulas-row {
-  display: flex;
-  gap: 10px;
-  font-size: 0.75rem;
-  color: #38bdf8;
-  margin-bottom: 8px;
-}
-
-.contact-subrow {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 0.8rem;
-  color: #e2e8f0;
-}
-
-/* Barra de iconos sociales rapida */
+/* Barra de iconos sociales */
 .quick-social-bar {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -423,7 +279,7 @@ body {
   margin: 15px 0 20px;
 }
 
-.quick-social-bar a {
+.btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -432,11 +288,12 @@ body {
   color: #334155;
   border-radius: 10px;
   font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
   transition: all 0.2s ease;
-  text-decoration: none;
 }
 
-.quick-social-bar a:hover {
+.btn-icon:hover {
   background: #2563eb;
   color: #ffffff;
 }
@@ -451,8 +308,7 @@ body {
   border-radius: 12px;
   padding: 12px 15px;
   margin-bottom: 10px;
-  text-decoration: none;
-  color: inherit;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -462,22 +318,9 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.specialty-info h4 {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #1e293b;
-}
-
-.specialty-info p {
-  margin: 2px 0 0;
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-.specialty-icon {
-  color: #2563eb;
-  font-size: 1.1rem;
-}
+.specialty-info h4 { margin: 0; font-size: 0.95rem; color: #1e293b; }
+.specialty-info p { margin: 2px 0 0; font-size: 0.8rem; color: #64748b; }
+.specialty-icon { color: #2563eb; font-size: 1.1rem; }
 
 /* Bloque QR / vCard */
 .vcard-qr-box {
@@ -495,7 +338,7 @@ body {
   margin: 10px 0;
 }
 
-/* ==================== FOOTER PUBLICITARIO ==================== */
+/* Footer Publicitario */
 .sales-footer {
   background-color: #0f172a;
   color: #ffffff;
@@ -504,12 +347,7 @@ body {
   margin-top: auto;
 }
 
-.sales-footer p {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  margin-bottom: 12px;
-}
-
+.sales-footer p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px; }
 .cta-btn {
   display: inline-flex;
   align-items: center;
@@ -521,9 +359,5 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
-  transition: background-color 0.2s;
 }
-
-.cta-btn:hover {
-  background-color: #059669;
-}
+.cta-btn:hover { background-color: #059669; }
