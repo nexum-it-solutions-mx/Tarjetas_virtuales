@@ -1,0 +1,529 @@
+/* ==================== ESTILOS GENERALES Y RESET ==================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== BANNER / CABECERA ==================== */
+.demo-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.banner-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.demo-banner h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.demo-banner p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Selector de pestañas */
+.selector-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.tab-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 25px 15px;
+}
+
+.demo-card {
+  display: none;
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.demo-card.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== CABECERA DE LAS DEMOS TRADICIONALES ==================== */
+.card-header {
+  padding: 25px 20px 20px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+.bg-food { background: linear-gradient(135deg, #e11d48, #f97316); }
+.bg-medical { background: linear-gradient(135deg, #0284c7, #0d9488); }
+.bg-beauty { background: linear-gradient(135deg, #9333ea, #db2777); }
+
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 1.8rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.card-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.google-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+}
+
+.stars {
+  color: #facc15;
+  font-weight: 600;
+}
+
+.reviews-count {
+  opacity: 0.8;
+}
+
+/* ==================== CUERPO DE LAS TARJETAS ==================== */
+.card-body {
+  padding: 20px;
+}
+
+.bio-text {
+  font-size: 0.85rem;
+  color: #475569;
+  text-align: center;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-action:hover { opacity: 0.9; }
+.btn-action.whatsapp { background-color: #25d366; color: #ffffff; }
+.btn-action.map { background-color: #3b82f6; color: #ffffff; }
+.btn-action.phone { background-color: #0284c7; color: #ffffff; }
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Lista de Menú */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.item-info h4 {
+  font-size: 0.85rem;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.item-info p {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #059669;
+  font-size: 0.9rem;
+}
+
+/* Servicios Medicos */
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.service-tag {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-box {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+/* Catálogo de Estética */
+.catalog-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background-color: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  border-radius: 8px;
+}
+
+.product-icon {
+  font-size: 1.2rem;
+  color: #db2777;
+}
+
+.product-details h4 {
+  font-size: 0.82rem;
+  color: #831843;
+}
+
+.product-details p {
+  font-size: 0.72rem;
+  color: #9d174d;
+}
+
+.product-details .price {
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #be185d;
+}
+
+/* Iconos Sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.social-icon:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* ==================== DEMO 4: TARJETA VIRTUAL PRO ==================== */
+.hero-vpro {
+  position: relative;
+  height: 320px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.3)), 
+              url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.hero-vpro .verified-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero-vpro h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.hero-vpro p.title {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin: 4px 0 10px;
+}
+
+.cedulas-row {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.contact-subrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+}
+
+/* Barra de iconos sociales rapida */
+.quick-social-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 15px 0 20px;
+}
+
+.quick-social-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  background: #f1f5f9;
+  color: #334155;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.quick-social-bar a:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Lista de especialidades interactiva */
+.specialty-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.specialty-card:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.specialty-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.specialty-info p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.specialty-icon {
+  color: #2563eb;
+  font-size: 1.1rem;
+}
+
+/* Bloque QR / vCard */
+.vcard-qr-box {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.vcard-qr-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* ==================== FOOTER PUBLICITARIO ==================== */
+.sales-footer {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.sales-footer p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #10b981;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.cta-btn:hover {
+  background-color: #059669;
+}
